@@ -3,7 +3,7 @@
 [![waifu.pics](https://waifu.pics/favicon.png)](https://waifu.pics)
 
 # Waifu.pics.js
-A powerful waifu.pics api wrapper for NodeJS.
+A powerful waifu.pics api wrapper for NodeJS. <br>
 [![Latest Stable Version](https://img.shields.io/npm/v/waifu.pics.js.svg)](https://www.npmjs.com/package/waifu.pics.js)
 [![NPM Downloads](https://img.shields.io/npm/dt/waifu.pics.js.svg)](https://www.npmjs.com/package/waifu.pics.js)
 [![NPM Downloads](https://img.shields.io/npm/dm/waifu.pics.js.svg)](https://www.npmjs.com/package/waifu.pics.js)
@@ -19,6 +19,8 @@ A powerful waifu.pics api wrapper for NodeJS.
   - [`core.<type>`](#coretype)
   - [`core.<type>.key`](#coretypekey)
   - [`core.<type>.many`](#coretypemany)
+- [Community](#community)
+- [Useful Link](#usefullink)
 # Install
 ```
 npm install waifu.pics.js
