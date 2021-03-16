@@ -40,9 +40,9 @@ module.exports.nsfw.many = function getManyNsfw(categories) {
 }
 
 
-async function many (endpoint, exclude) {
+function many (endpoint, exclude) {
 	return new Promise((res, rej) => {
-		return await fetch('https://waifu.pics/api/many/'+endpoint, {
+		return fetch('https://waifu.pics/api/many/'+endpoint, {
         		method: 'post',
 	        	body:    JSON.stringify({ exclude: exclude||[] }),
         		headers: { 'Content-Type': 'application/json' },
@@ -53,9 +53,9 @@ async function many (endpoint, exclude) {
 	});
 }
 
-async function get (endpoint) {
+function get (endpoint) {
         return new Promise((res, rej) => {
-                return await fetch('https://waifu.pics/api/'+endpoint, {
+                return fetch('https://waifu.pics/api/'+endpoint, {
                         method: 'get'
                 })
                 .then(res => res.json())
