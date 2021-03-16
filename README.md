@@ -17,7 +17,7 @@ A powerful waifu.pics api wrapper for NodeJS. <br>
 - [API](#api)
   - [`core`](#core)
   - [`core.<type>`](#coretype)
-  - [`core.<type>.key`](#coretypekey)
+  - [`core.<type>.categories`](#coretypecategories)
   - [`core.<type>.many`](#coretypemany)
 - [Community](#community)
 - [Useful Link](#usefullink)
@@ -41,6 +41,12 @@ waifu().then(json => {
 		}
 	*/
 }).catch(console.error);
+
+// Or
+(async () => {
+	var response = await waifu();
+	// { files: [ .... ] }
+})();
 ```
 ### `core.<type>` 
 A function that fetch a requested waifu type, Waifu has 2 types, They are `sfw` and `nsfw` Returns `Promise { <pending> }`
@@ -48,11 +54,17 @@ A function that fetch a requested waifu type, Waifu has 2 types, They are `sfw` 
 waifu.sfw("neko").then(json => {
 	// { url: 'https://i.waifu.pics/vwNedaS.jpg' }	
 }).catch(console.error);
+
+// Or
+(async () => {
+	var response = await waifu.sfw("neko")();
+	// { url: '....' }
+})();
 ```
-### `core.<type>.key`
+### `core.<type>.categories`
 A object property that returns all `<waifu type>` categories key, Returns `object`
 ```js
-console.log( waifu.sfw.key );
+console.log( waifu.sfw.categories );
 /*
 	[
  	  'waifu',    'neko',     'shinobu',
@@ -79,6 +91,12 @@ waifu.sfw.many("smile").then(json => {                                          
                 }
         */
 }).catch(console.error);
+
+// Or
+(async () => {
+	var response = await waifu.sfw.many("smile");
+	// { files: [ .... ] }
+})();
 ```
 
 # Community
