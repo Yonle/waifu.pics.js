@@ -1,6 +1,6 @@
 {
   "name": "waifu.pics.js",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A powerful waifu.pics api wrapper for NodeJS.",
   "main": "waifu.pics.js",
   "scripts": {
