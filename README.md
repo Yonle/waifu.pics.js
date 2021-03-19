@@ -27,7 +27,7 @@ npm install waifu.pics.js
 ```
 ## API
 ### `core`
-A functions that loaded from `require("waifu.pics.js")`, Fetching many `waifu` many waifu url from [waifu.pics](https://waifu.pics) endpoint. Returns `Promise { <pending> }`
+A functions that loaded from `require("waifu.pics.js")`, Fetching many `waifu` url from [waifu.pics](https://waifu.pics) endpoint. Returns `Promise { <pending> }`
 ```js
 const waifu = require("waifu.pics.js");
 

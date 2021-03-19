@@ -11,39 +11,41 @@ module.exports = function Waifu(ex) {
         return many("sfw/waifu", ex);
 };
 
-module.exports.sfw = async function getSfw(categories) {
+module.exports.sfw = function getSfw(categories) {
                 if (!sfwCategories.includes(categories)) {
                         let err = new Error("Not SFW categories");
                         err.code = "ERR_INVALID_CATEGORIES";
                         return err;
                 }
-                return await get("sfw/"+categories);
+                return get("sfw/"+categories);
 }
 
 module.exports.sfw.categories = sfwCategories;
-module.exports.sfw.many = async function getManySfw(categories) {
+module.exports.sfw.many = function getManySfw(categories) {
                 if (!sfwCategories.includes(categories)) {
                         let err = new Error("Not SFW categories");
                         err.code = "ERR_INVALID_CATEGORIES";
-                        return err;                                                           }
-                return await many("sfw/"+categories);
+                        return err;
+                }
+                return many("sfw/"+categories);
 }
-module.exports.nsfw = async function getNsfw(categories) {
+module.exports.nsfw = function getNsfw(categories) {
                 if (!nsfwCategories.includes(categories)) {
                         let err = new Error("Not NSFW categories");
                         err.code = "ERR_INVALID_CATEGORIES";
-                        return err;                                                           }
-                return await get("nsfw/"+categories);
+                        return err;
+                }
+                return get("nsfw/"+categories);
 }
 
 module.exports.nsfw.categories = nsfwCategories;
-module.exports.nsfw.many = async function getManyNsfw(categories) {
+module.exports.nsfw.many = function getManyNsfw(categories) {
                 if (!nsfwCategories.includes(categories)) {
                         let err = new Error("Not NSFW categories");
                         err.code = "ERR_INVALID_CATEGORIES";
                         return err;
                 };
-                return await many("nsfw/"+categories);
+                return many("nsfw/"+categories);
 }
 
 
@@ -55,7 +57,8 @@ function many (endpoint, exclude) {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' }
                 }, (response) => {
-                        var data = [];                                                                response.on('error', rej);
+                        var data = [];
+                        response.on('error', rej);
                         response.on('data', chunk => data.push(Buffer.from(chunk)));
                         response.on('end', () => res(JSON.parse(Buffer.concat(data))));
                 }).on('error', rej).end(JSON.stringify({ exclude: exclude||[] }));
