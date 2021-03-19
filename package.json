@@ -1,10 +1,6 @@
 {
   "name": "waifu.pics.js",
-<<<<<<< HEAD
-  "version": "0.0.2",
-=======
-  "version": "0.0.0",
->>>>>>> faf42ec36cb1e56ffae32cf19e0c2b74157fa0fb
+  "version": "0.0.4",
   "description": "A powerful waifu.pics api wrapper for NodeJS.",
   "main": "waifu.pics.js",
   "scripts": {
@@ -22,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/Yonle/waifu.pics.js/issues"
   },
-  "homepage": "https://github.com/Yonle/waifu.pics.js#readme",
-  "dependencies": {
-    "node-fetch": "2.x"
-  }
+  "homepage": "https://github.com/Yonle/waifu.pics.js#readme"
 }
