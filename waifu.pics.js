@@ -52,8 +52,8 @@ module.exports.nsfw.many = function getManyNsfw(categories) {
 function many (endpoint, exclude) {
         return new Promise((res, rej) => {
                 return https.request({
-                        hostname: "waifu.pics",
-                        path: `/api/many/${endpoint}`,
+                        hostname: "api.waifu.pics",
+                        path: `/many/${endpoint}`,
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' }
                 }, (response) => {
@@ -68,8 +68,8 @@ function many (endpoint, exclude) {
 function get (endpoint) {
         return new Promise((res, rej) => {
                 return https.get({
-                        hostname: "waifu.pics",
-                        path: `/api/${endpoint}`
+                        hostname: "api.waifu.pics",
+                        path: `/${endpoint}`
                 }, (response) => {
                         var data = [];
                         response.on('error', rej);
